@@ -1,0 +1,18 @@
+<h1>⚡ Effects in NGRX</h1>
+<p>GET API DATA will dispatch an Action of type ApiGetMockData that will be handled in <i>'./store/effects' service</i> and will map the action to another action of type ApiSuccess (the mock data will success always) after calling successfully the MockApiService</p> 
+
+<p>GET API DATA with ERROR instead will dispatch an Action of type ApiGetMockDataWithError that will be handled in <i>'./store/effects' service</i> and will map the action to another action of type ApiError because we simulate an Exception inside my MockApiService</p> 
+<p>
+<b>Inside <i>src/app/store/effects.ts</i> the behaviour of multiple effects in the same time can be changed using different RXJS operators between mergeMap, switchMap, concatMap, exhaustMap. You can test it by clicking the buttons multiple times and by watching the log results.</b>
+</p>
+<br/>
+
+<button (click)="getApiData()">GET API DATA</button>
+
+<button (click)="getError()">GET API DATA with ERROR</button>
+
+<div class="data-container">
+  <h2>Application state</h2>
+  <span class="error">Error: {{JSON.stringify((this.error$ | async)) || 'null'}} </span><br />
+  <span class="data">Data: {{(JSON.stringify(this.data$ | async)) || 'null'}} </span>
+</div>

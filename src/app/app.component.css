@@ -1,0 +1,14 @@
+h1, p {
+  font-family: Lato;
+}
+
+.data-container {
+  font-family: 'Courier New', Courier, monospace;
+}
+.error {
+  color: red;
+}
+
+.data {
+  color: blue;
+}
